@@ -1,0 +1,23 @@
+<div class="col-md-12 mt-3">
+    <h1>{{page_title}}</h1>
+    <div class="alert alert-success" *ngIf="status == 'success'">
+        El registro se ha realizado correctamente
+    </div>
+
+    <form action="" class="col-md-5 ml-0 pl-0" #registerForm="ngForm" (ngSubmit) = "onSubmit(registerForm)">
+        <div class="form-group">
+            <label for="">Nombre Producto</label>
+            <select name="product_id" class="form-control"  required>     
+            <option *ngFor = "let pro of products" value="{{pro.product_id}}">
+                {{pro.product_description}}
+            </option>
+            </select>   
+        </div>
+       <br>
+   
+       
+        <input type="submit" value="Registrar Cliente" class="btn btn-success" [disabled] = "registerForm.invalid"/>
+    </form>
+</div>
+
+   

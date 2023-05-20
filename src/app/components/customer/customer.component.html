@@ -1,0 +1,68 @@
+<div class="col-md-12 mt-3">
+    <h1>{{page_title}}</h1>
+    <div class="alert alert-success" *ngIf="status == 'success'">
+        El registro se ha realizado correctamente
+    </div>
+
+    <form action="" class="col-md-5 ml-0 pl-0" #registerForm="ngForm" (ngSubmit) = "onSubmit(registerForm)">
+        <div class="form-group">
+            <label for="customer_id_number">Número de identificación</label>
+            <input type="text" name="customer_id_number" class="form-control"  #customer_id_number ="ngModel" [(ngModel)] = "custom.customer_id_number" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="city_id">Nombre Ciudad</label>
+            <select name="city_id" class="form-control"  #city_id ="ngModel" [(ngModel)] = "custom.city_id" required>     
+            <option *ngFor = "let cit of cities" value="{{cit.city_id}}">
+                {{cit.city_name}}
+            </option>
+            </select>   
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="customer_phone">Teléfono</label>
+            <input type="text" name="customer_phone" class="form-control"  #customer_phone ="ngModel" [(ngModel)] = "custom.customer_phone" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="customer_birth_date">Fecha de cumple años</label>
+            <input type="date" name="customer_birth_date" class="form-control"  #customer_birth_date ="ngModel" [(ngModel)] = "custom.customer_birth_date" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="customer_address">Dirección</label>
+            <input type="text" name="customer_address" class="form-control"  #customer_address ="ngModel" [(ngModel)] = "custom.customer_address" required>
+        </div>
+        <br>
+       
+        <input type="submit" value="Registrar Cliente" class="btn btn-success" [disabled] = "registerForm.invalid"/>
+    </form>
+</div>
+
+    <div class="col-md-12 mt-3">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Número de identificación</th>
+                <th scope="col">Ciudad</th>
+                <th scope="col">Fecha de cumple años</th>
+                <th scope="col">Dirección</th>
+                <th scope="col">Teléfono</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor = "let cus of customer ">
+                <th>{{cus.customer_id_number}}</th>
+                <td>{{cus.city_name}}</td>
+                <td>{{cus.customer_birth_date}}</td>
+                <td>{{cus.customer_address}}</td>
+                <td>{{cus.customer_phone}}</td>
+               
+              </tr>
+            </tbody>
+          </table>
+    
+    </div>
+
+

@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id del cliente</th>
+      <th scope="col">Fecha de la orden</th>
+      <th scope="col">Total de la orden</th>
+      <th scope="col">Fecha de la entrega</th>
+      <th scope="col">Estado de la orden</th>
+    
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let or of orders ">
+      <th>{{or.customer_id_number}}</th>
+      <td>{{or.order_date}}</td>
+      <td>{{or.order_total}}</td>
+      <td>{{or.order_date_delivery}}</td>
+      <td>{{or.order_satus}}</td>
+    </tr>
+  </tbody>
+</table>

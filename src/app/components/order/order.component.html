@@ -1,0 +1,63 @@
+
+<div class="col-md-12 mt-3">
+    <h1>{{page_title}}</h1>
+    <br>
+
+    <form action="" class="col-md-5 ml-0 pl-0" #registerForm="ngForm" (ngSubmit) = "onSubmit(registerForm)">
+      <div class="form-group">
+        <label for="city_id">Id de cliente</label>
+        <select name="city_id" class="form-control"  #city_id ="ngModel" [(ngModel)] = "order.customer_id" required>     
+        <option *ngFor = "let cus of customer" value="{{cus.customer_id}}">
+            {{cus.customer_id_number}}
+        </option>
+        </select>   
+    </div>
+
+    <br>
+    <div class="form-group">
+      <label for="order_date">Fecha de la orden</label>
+      <input type="date" name="order_date" class="form-control"  #order_date ="ngModel" [(ngModel)] = "order.order_date" required>
+  </div>
+  <br>
+  <div class="form-group">
+      <label for="order_total">Total</label>
+      <input type="number" name="order_total" class="form-control"  #order_total ="ngModel" [(ngModel)] = "order.order_total" required>
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="order_date_delivery">Fecha entrea</label>
+    <input type="date" name="order_date_delivery" class="form-control"  #order_date_delivery ="ngModel" [(ngModel)] = "order.order_date_delivery" required>
+</div>
+  <br>
+  <div class="form-group">
+    <label for="order_satus">Estado</label>
+    <input type="text" name="order_satus" class="form-control"  #order_satus ="ngModel" [(ngModel)] = "order.order_satus" required>
+</div>
+    
+      <br>
+      
+  </form>
+  <hr>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id del cliente</th>
+        <th scope="col">Fecha de la orden</th>
+        <th scope="col">Total de la orden</th>
+        <th scope="col">Fecha de la entrega</th>
+        <th scope="col">Estado de la orden</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let or of orders ">
+        <th>{{or.customer_id_number}}</th>
+        <td>{{or.order_date}}</td>
+        <td>{{or.order_total}}</td>
+        <td>{{or.order_date_delivery}}</td>
+        <td>{{or.order_satus}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

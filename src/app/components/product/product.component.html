@@ -1,0 +1,58 @@
+<div class="col-md-12 mt-3">
+    <h1>{{page_title}}</h1>
+    <div class="alert alert-success" *ngIf="status == 'success'">
+        El registro se ha realizado correctamente
+    </div>
+
+    <form action="" class="col-md-5 ml-0 pl-0" #registerForm="ngForm" (ngSubmit) = "onSubmit(registerForm)">
+        <div class="form-group">
+            <label for="name">Descripción producto</label>
+            <input type="text" name="product_description" class="form-control"  #product_description ="ngModel" [(ngModel)] = "productos.product_description" required>
+        </div>
+
+        <div class="form-group">
+          <label for="product_amount">Monto</label>
+          <input type="number" name="product_amount" class="form-control" #product_amount ="ngModel" [(ngModel)] = "productos.product_amount" required>
+      </div>
+      <div class="form-group">
+          <label for="product_value">Valor del producto</label>
+          <input type="number" name="product_value" class="form-control" #email ="ngModel" [(ngModel)] = "productos.product_value" required>
+         
+      </div>
+      <div class="form-group">
+          <label for="product_status">Estado</label>
+          <input type="text" name="product_status" class="form-control" #product_status ="ngModel" [(ngModel)] = "productos.product_status" required>
+          
+      </div>
+        <br>
+        <input type="submit" value="Registrar Producto" class="btn btn-success" [disabled] = "registerForm.invalid"/>
+    </form>
+</div>
+
+
+
+
+    <div class="col-md-12 mt-3">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Descripción de producto</th>
+                <th scope="col">Monto</th>
+                <th scope="col">Valor del producto</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor = "let prod of product ">
+                <th>{{prod.product_description}}</th>
+                <td>{{prod.product_amount}}</td>
+                <td>{{prod.product_value}}</td>
+                <td>{{prod.product_status}}</td>
+           
+              </tr>
+            </tbody>
+          </table>
+    
+    </div>
+
+
