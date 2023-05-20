@@ -15,6 +15,8 @@ import { OrderComponent } from './components/order/order.component';
 import { ProductComponent } from './components/product/product.component';
 import { OrderDetailComponent } from './components/order-detail/order-detail.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
+import { UpdateOrderComponent } from "./components/update-order/update-order.component";
+import { DetailOrdersComponent } from "./components/detail-orders/detail-orders.component";
 
 
 
@@ -29,6 +31,8 @@ const appRoutes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'registro', component: RegisterComponent},
     {path: 'agregar_producto/:id', component: AddProductComponent},
+    {path: 'agregar_productos/:id', component: UpdateOrderComponent},
+    {path: 'detalle_orden/:id', component: DetailOrdersComponent},
     {path: '**', component: ErrorComponent},
 ];
 

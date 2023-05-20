@@ -6,6 +6,7 @@
       <th scope="col">Total de la orden</th>
       <th scope="col">Fecha de la entrega</th>
       <th scope="col">Estado de la orden</th>
+      <th scope="col">Agregar Producto</th>
     
     </tr>
   </thead>
@@ -16,6 +17,8 @@
       <td>{{or.order_total}}</td>
       <td>{{or.order_date_delivery}}</td>
       <td>{{or.order_satus}}</td>
+      <td><a [routerLink]="['/agregar_productos', or.order_id]">Agregar Producto</a></td>
+      <td><a [routerLink]="['/detalle_orden', or.order_id]">Ver Detalle Producto</a></td>
     </tr>
   </tbody>
 </table>

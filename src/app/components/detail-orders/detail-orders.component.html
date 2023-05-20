@@ -1,0 +1,59 @@
+<div class="col-md-12">
+<hr>
+<h2>Información de la Orden</h2>
+<hr>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id del cliente</th>
+      <th scope="col">Fecha de la orden</th>
+      <th scope="col">Total de la orden</th>
+      <th scope="col">Fecha de la entrega</th>
+      <th scope="col">Estado de la orden</th>
+      <th scope="col">Cumple años del cliente</th>
+      <th scope="col">Direccción del cliente</th>
+      <th scope="col">Teléfono del cliente</th>
+      <th scope="col">Ciudad</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let or of orders_detail ">
+      <th>{{or.customer_id_number}}</th>
+      <td>{{or.order_date}}</td>
+      <td>{{or.order_total}}</td>
+      <td>{{or.order_date_delivery}}</td>
+      <td>{{or.order_satus}}</td>
+      <td>{{or.customer_birth_date}}</td>
+      <td>{{or.customer_address}}</td>
+      <td>{{or.customer_phone}}</td>
+      <td>{{or.city_name}}</td>
+     
+    </tr>
+  </tbody>
+</table>
+<hr>
+<h2>Información de productos</h2>
+<h5>Cantidad de productos: <strong>{{cantidad}}</strong></h5>
+<hr>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Descriçión del producto</th>
+      <th scope="col">Monto</th>
+      <th scope="col">Valor de producto</th>
+      <th scope="col">Estado del producto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let pr of product_detail ">
+      <th>{{pr.product_description}}</th>
+      <td>{{pr.product_amount}}</td>
+      <td>{{pr.product_value}}</td>
+      <td>{{pr.product_status}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
